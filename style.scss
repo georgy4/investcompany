@@ -79,6 +79,7 @@ a {
   @include flex-center();
   position: relative;
   top:30%;
+  height: auto;
   transition: top 1s ease;
   z-index: 5;
 }
@@ -148,6 +149,7 @@ a {
   width: 60px;
   height: auto;
   margin: 10px;
+  transition: opacity 1s ease;
 }
 
 input[type="radio"] {
@@ -322,7 +324,6 @@ input[type="radio"]:checked ~ label {
     display:none;
     width: 100%;
     height: 150px;
-    // background-image: url("img/bg2.png"), linear-gradient(180deg, rgb(231, 227, 207), transparent);
     background-image: url("img/bg2.png"); /* fallback */
     background-image: linear-gradient(to bottom, rgb(231, 227, 207) 5%, transparent 20%), url("img/bg2.png"); /* W3C */
     background-repeat: no-repeat;

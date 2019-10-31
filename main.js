@@ -15,7 +15,7 @@ optionsItem.forEach(function(element) {
   element.addEventListener('click', function(){
 
     if(!counter) {
-      options.style = 'top: -150px';
+      options.style = 'top: -150px;';
       option.forEach(function(elem) {
         setTimeout(() => {
           elem.style = 'height:140px;';
@@ -24,7 +24,7 @@ optionsItem.forEach(function(element) {
         elem.classList.add('option-opacity');
       });
       labelImg.forEach(function(el) {
-        el.style = 'opacity:0;';
+        el.style.opacity = 0;
       });
       setTimeout(() => {
         options.style.borderBottom = '2px solid rgba(201, 200, 200, 0.432)';
