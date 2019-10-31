@@ -1,0 +1,333 @@
+// @font-face {
+//   font-family: 'Pf Din Text Comp Pro';
+//   src: url('fonts/PFDinTextCompPro-Light.ttf') format('truetype');
+//   font-weight: 300;
+//   font-style: normal;
+// }
+
+@font-face {
+  font-family: 'Pf Din Text Comp Pro';
+  src: url('fonts/PFDinTextCompPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+$dark-grey: rgb(85, 85, 85);
+$green: rgb(67, 196, 164);
+$gray: rgba(235, 235, 235, 0.432);
+
+body {
+  font-family: 'Pf Din Text Comp Pro';
+  height: 100%;
+  background-image: url("img/bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: $dark-grey;
+  letter-spacing: 1px;
+}
+
+.background {
+  z-index: -1;
+  background-image: url("img/bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: $dark-grey;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  transition: background-image 0.5s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display:flex;
+  width:100%
+}
+
+.options {
+  @include flex-center();
+  position: relative;
+  top:30%;
+  transition: top 1s ease;
+  z-index: 5;
+}
+
+
+.menu-inner {
+  @include flex-center();
+  flex-wrap: wrap;
+}
+
+.input-title {
+  width: 100%;
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 40px;
+}
+
+.option {
+  @include flex-center();
+  width: 250px;
+  height: 250px; 
+  background-color: $gray;
+  margin: 0 auto;
+  border: 5px solid rgba(240, 238, 238, 0);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 2px transparent;
+  &:nth-child(4) .label-img {
+    width: 42px;
+  }
+  &:hover {
+    box-shadow: inset 0 0 0 2px $green;
+  }
+  transition: height 0.5s ease-out,
+    border 0.7s ease-out,
+    background-color 0.7s ease-out,
+    box-shadow 0.5s ease;
+}
+
+.option-opacity {
+  background: transparent;
+  border: 0px solid transparent;
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.options-item {
+  @include flex-center();
+  flex-direction: column;
+  border-bottom: 1px solid transparent;
+  width: 100%;
+  height: 100%;
+  span {
+    padding: 20px 0;
+    font-size: 23px;
+    color: lighten($dark-grey, 10%);
+  }
+}
+
+.options-item:hover span {
+  color: rgb(146, 145, 145);
+}
+
+.label-img {
+  opacity: 1;
+  width: 60px;
+  height: auto;
+  margin: 10px;
+}
+
+input[type="radio"] {
+  display:none;
+}
+
+input[type="radio"]:checked ~ label {
+  transition: border 0.7s ease-in;
+  transition-delay: 0.3s;
+  border-bottom: 2px solid $green;
+  color: $green;
+}
+
+
+// content
+
+.content {
+  width: 100%;
+  height: 0px;
+  overflow: hidden;
+  z-index: 4;
+  position: relative;
+  top: -150px;
+  font-family: 'Open Sans', sans-serif;
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+
+.content-inner {
+  display:none;
+  width: 65%;
+  margin-left: 15px;
+}
+
+.description,
+.list-text {
+  font-size: 13px;
+  letter-spacing: 0px;
+  font-weight: 600;
+}
+
+.description {
+  padding: 60px 0 35px 0;
+}
+
+.title {
+  font-size: 25px;
+  font-family: 'Pf Din Text Comp Pro';
+}
+
+.number {
+  color: $green;
+  font-family: 'Pf Din Text Comp Pro';
+  font-size: 25px;
+}
+
+.list-text {
+  display: block;
+  padding-left: 15px;
+}
+
+.button {
+  width: auto;
+  height: 35px;
+  background-color: $green;
+  border: none;
+  color: rgb(231, 231, 231);
+  padding: 0 18px;
+  border-radius: 5%;
+  outline: none;
+  &:hover {
+    background-color: darken($green, 5%);
+  }
+}
+
+.list {
+  list-style-type: none;
+  padding: 15px 0 20px 0;
+}
+
+.list-item {
+  display:flex;
+  align-items: center;
+  padding: 7px 0px;
+  line-height: 19px;
+}
+
+.option-mobile {
+  display: none;
+}
+
+.bottom-image {
+  display:none;
+}
+
+@media (max-width:500px) {
+  .option {
+    display:none;
+  }
+  .options {
+    margin: 0;
+    padding:0;
+    position: static;
+  }
+  .input-title {
+    margin: 0;
+    padding: 30px 0 20px 0;
+  }
+  .menu-inner {
+    width: 100%;
+    margin: 0;
+    padding:0;
+  }
+
+  .content {
+    height: auto;
+    opacity: 1;
+    position: static;
+    width: 100%;
+  }
+
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .content-inner {
+    display:block;
+    height:0px;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+
+
+  .option-mobile {
+    @include flex-center();
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px 10px;
+    background-color: rgb(241, 241, 241);
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+
+  .angle-active {
+    transform: rotate(180deg);
+  }
+  .angle {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s linear;
+  }
+  .label-img {
+    width: 38px;
+  }
+  .little-img {
+    width: 32px;
+  }
+
+  .description {
+    padding: 15px 0;
+  }
+  .list {
+    padding: 10px 0 15px 0;
+  }
+  .list-item {
+    padding: 4px 0;
+  }
+  .bottom-image {
+    position: relative;
+    display:none;
+    width: 100%;
+    height: 150px;
+    // background-image: url("img/bg2.png"), linear-gradient(180deg, rgb(231, 227, 207), transparent);
+    background-image: url("img/bg2.png"); /* fallback */
+    background-image: linear-gradient(to bottom, rgb(231, 227, 207) 5%, transparent 20%), url("img/bg2.png"); /* W3C */
+    background-repeat: no-repeat;
+    background-position: top, bottom right;
+    background-size: auto, cover;
+    margin-bottom: 15px;
+  }
+}
