@@ -9,6 +9,8 @@ var scss = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps')
 var pug = require('gulp-pug');
 var del = require('del');
+var exec = require('child_process').exec;
+var execSync = require('child_process').execSync;
 
 // Задачи для Gulp
 
@@ -122,6 +124,16 @@ gulp.task('server', gulp.series('clean:build', gulp.parallel('scss', 'pug', 'cop
     gulp.watch('src/fonts/**/*', gulp.series('copy:fonts'));
 }));
 
+function netlify(done) {
+  return new Promise(function(resolve, reject) {
+      console.log(execSync('netlify watch').toString());
+      resolve();
+  });
+}
 
-
+function netlifyOpen(done) {
+  return exec('netlify open:site');
+  done();
+}
+exports.deploy = series(netlify, netlifyOpen);
 gulp.task('default', gulp.series(['server']));
