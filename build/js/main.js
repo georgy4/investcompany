@@ -1,3 +1,5 @@
+'use strict'
+
 let optionsItem = document.querySelectorAll('.options-item');
 let labelImg = document.querySelectorAll('.label-img');
 let options = document.querySelector('.options');
@@ -7,8 +9,6 @@ let option = document.querySelectorAll('.option');
 let background = document.querySelector('.background');
 let content = document.querySelector('.content');
 let contentInner = document.querySelectorAll('.content-inner');
-
-
 let counter = 0;
 
 optionsItem.forEach(function(element) {

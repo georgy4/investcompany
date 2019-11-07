@@ -7,7 +7,7 @@
 
 @font-face {
   font-family: 'Pf Din Text Comp Pro';
-  src: url('fonts/PFDinTextCompPro-Regular.ttf') format('truetype');
+  src: url('/fonts/PFDinTextCompPro-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -29,7 +29,7 @@ $gray: rgba(235, 235, 235, 0.432);
 body {
   font-family: 'Pf Din Text Comp Pro';
   height: 100%;
-  background-image: url("img/bg.png");
+  background-image: url("/img/bg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -39,7 +39,7 @@ body {
 
 .background {
   z-index: -1;
-  background-image: url("img/bg.png");
+  background-image: url("/img/bg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -325,8 +325,8 @@ input[type="radio"]:checked ~ label {
     display:none;
     width: 100%;
     height: 150px;
-    background-image: url("img/bg2.png"); /* fallback */
-    background-image: linear-gradient(to bottom, rgb(231, 227, 207) 5%, transparent 20%), url("img/bg2.png"); /* W3C */
+    background-image: url("/img/bg2.png"); /* fallback */
+    background-image: linear-gradient(to bottom, rgb(231, 227, 207) 5%, transparent 20%), url("/img/bg2.png"); /* W3C */
     background-repeat: no-repeat;
     background-position: top, bottom right;
     background-size: auto, cover;
