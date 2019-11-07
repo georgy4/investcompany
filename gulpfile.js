@@ -131,9 +131,18 @@ function netlify(done) {
   });
 }
 
-function netlifyOpen(done) {
+gulp.task('netlify', function(done) {
+  return new Promise(function(resolve, reject) {
+    console.log(execSync('netlify watch').toString());
+    resolve();
+  });
+});
+
+
+gulp.task('netlifyOpen', function(done) {
   return exec('netlify open:site');
   done();
-}
-exports.deploy = series(netlify, netlifyOpen);
+});
+
+exports.deploy = gulp.series('netlify', 'netlifyOpen');
 gulp.task('default', gulp.series(['server']));
