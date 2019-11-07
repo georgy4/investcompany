@@ -217,6 +217,7 @@ input[type="radio"]:checked ~ label {
   padding-left: 15px; }
 
 .button {
+  font-size: 14px;
   width: auto;
   height: 35px;
   background-color: #43c4a4;
