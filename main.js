@@ -54,7 +54,7 @@ let bottomImage = document.querySelectorAll('.bottom-image');
 for (let i = 0; i<optionMobile.length; i++) {
   optionMobile[i].addEventListener('click', function(evt){
     background.style.backgroundImage='none';
-    background.style.ackgroundColor = 'rgb(231, 227, 207)';
+    background.style.backgroundColor = 'rgb(231, 227, 207)';
     contentInner.forEach(function(inner){
       inner.style.height = 0;
     }); 
