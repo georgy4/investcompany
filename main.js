@@ -15,10 +15,10 @@ optionsItem.forEach(function(element) {
   element.addEventListener('click', function(){
 
     if(!counter) {
-      options.style = 'top: -150px;';
+      options.style.top = -150 + 'px';
       option.forEach(function(elem) {
         setTimeout(() => {
-          elem.style = 'height:140px;';
+          elem.style.height=140+'px';
           background.style.backgroundImage = 'url("img/bg2.png")';  
         }, 500);
         elem.classList.add('option-opacity');
@@ -40,10 +40,10 @@ optionsItem.forEach(function(element) {
 for (let j = 0; j< optionsItem.length; j++) {
   optionsItem[j].addEventListener('click', function(){
     contentInner.forEach(function(contentInn){
-      contentInn.style = 'display:none;';
+      contentInn.style.display='none'; 
     });
 
-    contentInner[j].style = 'display:block;';
+    contentInner[j].style.display = 'block';
   });
 }
 
@@ -53,15 +53,16 @@ let bottomImage = document.querySelectorAll('.bottom-image');
 
 for (let i = 0; i<optionMobile.length; i++) {
   optionMobile[i].addEventListener('click', function(evt){
-    background.style= 'background-image: none; background-color:rgb(231, 227, 207);';
+    background.style.backgroundImage='none';
+    background.style.ackgroundColor = 'rgb(231, 227, 207)';
     contentInner.forEach(function(inner){
-      inner.style = 'height:0px;';
+      inner.style.height = 0;
     }); 
     bottomImage.forEach(function(image){
-      image.style = 'display:none;';
+      image.style.display = 'none';
     }) 
-    contentInner[i].style = 'height:auto;';
+    contentInner[i].style.height = 'auto';
     
-    bottomImage[i].style = 'display:block';
+    bottomImage[i].style.display = 'block';
   });
 }
