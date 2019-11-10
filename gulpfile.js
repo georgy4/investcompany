@@ -124,25 +124,5 @@ gulp.task('server', gulp.series('clean:build', gulp.parallel('scss', 'pug', 'cop
     gulp.watch('src/fonts/**/*', gulp.series('copy:fonts'));
 }));
 
-function netlify(done) {
-  return new Promise(function(resolve, reject) {
-      console.log(execSync('netlify watch').toString());
-      resolve();
-  });
-}
 
-gulp.task('netlify', function(done) {
-  return new Promise(function(resolve, reject) {
-    console.log(execSync('netlify watch').toString());
-    resolve();
-  });
-});
-
-
-gulp.task('netlifyOpen', function(done) {
-  return exec('netlify open:site');
-  done();
-});
-
-exports.deploy = gulp.series('netlify', 'netlifyOpen');
 gulp.task('default', gulp.series(['server']));

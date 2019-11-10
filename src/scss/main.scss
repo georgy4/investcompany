@@ -39,7 +39,7 @@ body {
 
 .background {
   z-index: -1;
-  background-image: url("/img/bg.png");
+  background-image: url("../img/bg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -101,6 +101,10 @@ a {
   @include flex-center();
   width: 250px;
   height: 250px; 
+  @media screen and (min-width:650px) and (max-width:800px) {
+    width: 200px;
+    height: 200px;
+  }
   background-color: $gray;
   margin: 0 auto;
   border: 5px solid rgba(240, 238, 238, 0);
@@ -246,7 +250,7 @@ input[type="radio"]:checked ~ label {
   display:none;
 }
 
-@media (max-width:500px) {
+@media (max-width:649px) {
   .option {
     display:none;
   }
@@ -321,12 +325,13 @@ input[type="radio"]:checked ~ label {
     padding: 4px 0;
   }
   .bottom-image {
+    margin-top: 20px;
     position: relative;
     display:none;
     width: 100%;
-    height: 150px;
+    height: 170px;
     background-image: url("/img/bg2.png"); /* fallback */
-    background-image: linear-gradient(to bottom, rgb(231, 227, 207) 5%, transparent 20%), url("/img/bg2.png"); /* W3C */
+    background-image: linear-gradient(to bottom, rgb(231, 227, 207) 0%, transparent 15%), url("/img/bg2.png"); /* W3C */
     background-repeat: no-repeat;
     background-position: top, bottom right;
     background-size: auto, cover;
