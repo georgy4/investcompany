@@ -84,6 +84,12 @@ a {
   z-index: 5;
 }
 
+// position it over the viewport
+.preloadload-bg-img {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
 
 .menu-inner {
   @include flex-center();
